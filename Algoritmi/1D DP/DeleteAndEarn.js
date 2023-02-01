@@ -1,6 +1,6 @@
 //zadatak je bas lak ali nisam se setio ideje 
 //da sve iste vrendosti saberes u jedno polje
-// i da polse radis House robber
+// i da posle radis House robber
 const deleteAndEarn = nums => {
     const arr = Array(10001).fill(0)
     for(let i = 0; i < nums.length; i++)
