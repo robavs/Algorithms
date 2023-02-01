@@ -1,3 +1,4 @@
+//takodje incijalno nisam umeo da uradim ovaj
 const canPartition = nums => {
     const sum = nums.reduce((a, c) => a + c)
     if(sum % 2 == 1)
