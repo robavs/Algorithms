@@ -1,3 +1,4 @@
+//ovaj zadatak takodje prvi put nisam umeo da uradim jer tad nisam znao 2D DP ali je izuzetno lak
 const findTargetSumWays = (nums, target) => {
     const memo = {}
     const dfs = (index, sum) => {
