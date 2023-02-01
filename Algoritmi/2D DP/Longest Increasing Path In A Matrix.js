@@ -1,3 +1,4 @@
+//za ovaj zadatak sam imao ideju ali sam pogledao snimak i video sam da je ideaj bila tacna (ali takodje lak)
 const longestIncreasingPath = matrix => {
     const m = matrix.length
     const n = matrix[0].length
