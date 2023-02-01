@@ -1,3 +1,4 @@
+//inicijalno nisam umeo
 const numSquares = n => {
     const dp = Array(n + 1).fill(0)
     const nums = Array(~~(n ** 0.5)).fill(0).map((_, i) => (i + 1) ** 2)
