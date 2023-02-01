@@ -1,3 +1,4 @@
+//moguce i da ovaj zadatak inicijalno nisam umeo da uradim (uglavnom nisam umeo te za subsete)
 const change = (target, nums) => {
     const dp = Array(nums.length + 1).fill(0).map(() => Array(target + 1).fill(-1))
     const dfs = (sum, index) => {
