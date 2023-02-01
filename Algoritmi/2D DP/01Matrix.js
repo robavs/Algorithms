@@ -1,7 +1,7 @@
 //ovaj trik sam video kod nekog iz resenja
 //ali sam i sam pre tako radio zadatke
 //tako da ovaj deo i nije DP
-//DP bi bio iz dva prolaza top-left  bottom-right sa updatom
+//DP bi bio iz dva prolaza top-left bottom-right sa updateom
 const updateMatrix = matrix => {
     const coords = [[1, 0], [-1, 0], [0, 1], [0, -1]]
     let rows = matrix.length
