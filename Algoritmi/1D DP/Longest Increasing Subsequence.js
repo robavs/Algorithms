@@ -1,4 +1,4 @@
-//ovo je moj kod
+//ovo je moj kod mada sam ideju dobio kad sam video snimak gde su rekli da posmatras kao graf
 const lengthOfLIS = nums => {
     const dp = Array(nums.length).fill(-1)
 
