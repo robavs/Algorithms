@@ -1,3 +1,4 @@
+//Ovaj zadatak nisam umeo da uradim, pa sam video resenje (ali je izuzetno lak)
 const longestCommonSubsequence = (text1, text2) => {
     const dp = Array(text1.length + 1).fill(0).map(() => Array(text2.length + 1).fill(-1))
 
