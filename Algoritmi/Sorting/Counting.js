@@ -20,7 +20,6 @@ const countingSort = A => {
         B[C[A[i]] - 1] = A[i]
         C[A[i]]--
     }
-    console.log(A.length, B.length)
     return B
 }
 //Modifikacija se vrsi tako da se pronadje najmanji element i on postavi na nultom indeksu tako sto ga siftujes
@@ -44,4 +43,3 @@ const countingSortMod = A => {
     }
     return B
 }
-console.log(countingSortMod([1,2,3,4,-1,-2,-3,4,4,5,1,2,-1,-1,-2,-3,-100,-25]))
