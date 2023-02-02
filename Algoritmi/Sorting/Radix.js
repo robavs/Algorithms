@@ -1,6 +1,6 @@
-//Radi se countingSort za svaku cifru pocevsi od poslednje
+// Radi se countingSort za svaku cifru pocevsi od poslednje
 // Potrebno mu je O(n) da izvrsi ali je zahtevan u pogledu memorije
-//Iskreno ne bih umeo trenutno sam da ga iskodiram al stavio sam ga cisto onako
+// Iskreno ne bih umeo trenutno sam da ga iskodiram al stavio sam ga cisto onako
 const countingSort = (nums, pos) => {
     const C = Array(10).fill(0),
           B = []
