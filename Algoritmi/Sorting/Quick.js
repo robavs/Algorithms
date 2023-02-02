@@ -29,7 +29,6 @@ const quickSort = (arr, l = 0, h = arr.length - 1) => {
     }
     return arr
 }
-console.log(quickSort([4, 1, 2, 7, 6, 5]))
 // Best: O(n * lg(n))
 // Average: O(n * lg(n))
 // Worst: O(n ^ 2)
