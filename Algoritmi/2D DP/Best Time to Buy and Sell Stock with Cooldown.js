@@ -1,10 +1,10 @@
 const maxProfit = prices => {
-    const dp = Array(prices.length).fill(0).map(() => Array(2).fill(-1))
+    const dp = Array(prices.length).fill(0).map(() => Array(2).fill(Infinity))
     const dfs = (index, buyed) => {
         if(index >= prices.length)
             return 0
 
-        if(dp[index][buyed] != -1)
+        if(dp[index][buyed] != Infinity)
             return dp[index][buyed]
 
         if(buyed == 1)
