@@ -23,7 +23,6 @@ const partition = (arr, l, h) => {
 const quickSort = (arr, l = 0, h = arr.length - 1) => {
     if (l < h) {
         let p = partition(arr, l, h)
-        console.log(p, arr)
         quickSort(arr, l, p - 1)
         quickSort(arr, p + 1, h)
     }
