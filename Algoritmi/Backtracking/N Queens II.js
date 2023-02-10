@@ -10,9 +10,8 @@ const totalNQueens = n => {
     let final = 0
 
     const backtrack = r => {
-        if (r == n) {
+        if (r == n) 
             return final++
-        }
         for (let c = 0; c < n; c++) {
             if (!col.has(c) && !posDiag.has(r + c) && !negDiag.has(r - c)) {
                 col.add(c)
