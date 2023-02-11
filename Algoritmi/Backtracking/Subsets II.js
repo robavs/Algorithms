@@ -1,5 +1,5 @@
-// Video sam sa interneta ali glavna ideja jeste da kad imas duplikate u jednom
-// subsetu ne ukljucujes nijedan duplikat a u drugom ukljucujes sve duplikate
+// Video sam sa interneta ali glavna ideja je da cim naidjes
+// na duplikat moras da shiftujes index dok imas iste elemente
 const subsetsWithDup = nums => {
     nums.sort((a, b) => a - b)
     const res = []
