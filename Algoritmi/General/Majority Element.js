@@ -1,3 +1,5 @@
+// Algoritam za majority element je jednostavan i kaze da treba da imas counter i candidate
+// i ukoliko je broj isti uvecavas counter a ukoliko se counter resetuje stavljas novi kandidat
 const majorityElement = nums => {
     let counter = 0
     let candidate
@@ -11,8 +13,9 @@ const majorityElement = nums => {
     }
     return candidate
 };
-
-
+// Za odredjivanje vise kandidata napravis onoliko varijabli za counter i candidata koliko se majority
+// elemenata traze i postupak se isto vrsi kao za majority element 1 samo sto kasnije treba da proveris
+// frekvecnije tih kandidata
 const majorityElementII = nums => {
     const res = []
     let can1 = -1
