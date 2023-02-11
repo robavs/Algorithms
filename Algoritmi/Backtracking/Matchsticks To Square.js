@@ -1,4 +1,5 @@
 // Glavna fora je da se niz sortira u opadajucem redosledu, ja sam sortirao u rastucem i to je uzrokovalo TLE
+// jer ukoliko se u nizu nadje neka vrednost koja je veca od moguce strnaice onda ce znati da tu prekine dalje procesiranje
 const makesquare = nums => {
     let path = Array(4).fill(0)
     let sum = nums.reduce((a, c) => a + c) / 4
