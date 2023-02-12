@@ -48,3 +48,32 @@ const canPartitionKSubsets = (nums, k) => {
     backtrack(0, 0, 0)
     return res
 };
+// Ovo resenje je ipak dosta bolje od oba prethodna
+// idalje ne mogu da vidim zasto prvo resenje iako je skoro identicno ovom, radi dosta sporije
+const canPartitionKSubsets = (nums, k) => {
+    const total = nums.reduce((a, c) => a + c)
+    if (total % k) return false
+
+    const sum = total / k
+
+    const path = new Array(k).fill(0)
+
+    function subsetSum(index) {
+      if (path.every((e) => e == sum)) 
+        return true
+
+      if (index < 0) 
+        return false
+
+      for (let i = 0; i < k; i++) {
+        if (path[i] + nums[index] <= sum) {
+            path[i] += nums[index]
+            if (subsetSum(index - 1)) return true
+            path[i] -= nums[index]
+            if (path[i] === 0) break // bez ove linije vraca TLE iako ne znam cemu sluzi :(
+        }
+      }
+      return false;
+    }
+  return subsetSum(nums.length - 1);
+}
