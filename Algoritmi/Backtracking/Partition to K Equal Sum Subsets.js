@@ -1,4 +1,5 @@
 // Ovo je isti nacin kao Matchsticks to Square i resenje prolazi ali za 5% Time i 85% memory
+ // lagano moze da se desi da ovaj kod ni ne prodje
 const canPartitionKSubsets = (nums, k) => {
     const sum = nums.reduce((a, c) => a + c) / k
     if (sum != ~~sum) return false
