@@ -1,24 +1,13 @@
-const generateParenthesis = n => {
-    const stack = []
+function generateParenthesis(n) {
     const res = []
-
-    const dfs = (stack, string, index, open) => {
-        if(index == 2 * n)
-            return res.push(string)
-            
-        if(open < n){
-            open++
-            stack.push("(")
-            dfs(stack, string + "(", index + 1, open)
-            open--
-            stack.pop()
-        }
-        if(stack.length > 0){
-            stack.pop()
-            dfs(stack, string + ")", index + 1, open)
-            stack.push("(")
-        }
-        return res
+    const dfs = (count, path, open, closed) => {
+        if (count == 2 * n) 
+            return res.push(path)
+        if (open < n)
+            dfs(count + 1, path + "(", open + 1, closed)
+        if (open > closed)
+            dfs(count + 1, path + ")", open, closed + 1)
     }
-    return dfs(stack, "", 0, 0)
+    dfs(0, "", 0, 0)
+    return res
 };
