@@ -1,6 +1,7 @@
 // U ovakvim zadacima je upotrebljna logika Dijkstra algoritma
 // nema potrebe da koristimo set vizitovanih vrenodsti upravo iz razloga jer
 // updatujemo input matricu uvek sa vecim vrednostima pa se ne vracamo na manju
+// takodje inicijalno nisam umeo uraditi
 const minPath = matrix => {
     const m = matrix.length
     const n = matrix[0].length
@@ -31,6 +32,3 @@ const minPath = matrix => {
     }
     return dist[m - 1][n - 1]
 }
-
-
-
