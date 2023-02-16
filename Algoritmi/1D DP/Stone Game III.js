@@ -1,7 +1,6 @@
 // MiniMax
 const stoneGameIII = nums => {
     const dp = Array(nums.length).fill(undefined)
-
     const dfs = (index) => {
         if(index >= nums.length)
             return 0
