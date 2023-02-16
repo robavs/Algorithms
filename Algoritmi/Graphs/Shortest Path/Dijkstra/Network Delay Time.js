@@ -32,5 +32,5 @@ const networkDelayTime = (times, n, k) => {
         if (dist[i] > max) max = dist[i]
         if (dist[i] == Infinity) return -1
     }
-    return Math.max(...dist)
+    return max
 };
