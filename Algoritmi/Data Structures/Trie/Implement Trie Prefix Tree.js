@@ -1,3 +1,4 @@
+// Video sa interneta
 class TrieNode{
     constructor(){
         this.children = {}
