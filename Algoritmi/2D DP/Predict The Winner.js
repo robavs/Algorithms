@@ -1,3 +1,4 @@
+// Minimax
 const PredictTheWinner = nums => {
     const dp = Array(nums.length).fill(0).map(() => Array(nums.length).fill(undefined))
 
