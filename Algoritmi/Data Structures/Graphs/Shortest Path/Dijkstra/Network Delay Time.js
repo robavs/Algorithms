@@ -1,3 +1,4 @@
+// inicijalno sam ga uradio gledajuci algoritam
 const networkDelayTime = (times, n, k) => {
     const graph = Array(n + 1).fill([])
     const edges = Array(n + 1).fill([])
