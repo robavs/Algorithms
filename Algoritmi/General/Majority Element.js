@@ -1,5 +1,8 @@
 // Algoritam za majority element je jednostavan i kaze da treba da imas counter i candidate
 // i ukoliko je broj isti uvecavas counter a ukoliko se counter resetuje stavljas novi kandidat
+
+// Incijalno nisam umeo uraditi oba sam
+
 const majorityElement = nums => {
     let counter = 0
     let candidate
