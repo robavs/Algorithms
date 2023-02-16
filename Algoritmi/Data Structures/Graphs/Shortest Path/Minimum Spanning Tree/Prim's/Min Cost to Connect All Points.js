@@ -1,3 +1,4 @@
+// uradio sam ga gledajuci algoritam
 const minCostConnectPoints = pts => {
     const visited = new Set()
     visited.add(0)
@@ -28,6 +29,3 @@ const minCostConnectPoints = pts => {
     }
     return cost
 };
-
-const pts = [[0, 0], [2, 2], [3, 10], [5, 2], [7, 0]]
-console.log(minCostConnectPoints(pts))
