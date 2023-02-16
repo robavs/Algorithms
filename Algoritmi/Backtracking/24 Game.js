@@ -52,3 +52,61 @@ let checkIfResultReached = list => {
 };
 
 let judgePoint24 = cards => checkIfResultReached(cards);
+
+
+// Moje resenje :(
+const judgePoint24 = (nums, target = 24) => {
+    let [num1, num2, num3, num4] = nums
+    const used = [0, 0, 0, 0]
+    const obj = {
+        "(": [...nums, "("],
+        ")": [")", "+", "-", "*", "/"],
+        "+": [...nums, "("],
+        "-": [...nums, "("],
+        "*": [...nums, "("],
+        "/": [...nums, "("],
+        [num1]: ["+", "-", "*", "/", ")"],
+        [num2]: ["+", "-", "*", "/", ")"],
+        [num3]: ["+", "-", "*", "/", ")"],
+        [num4]: ["+", "-", "*", "/", ")"]
+    }
+    let f = false
+    const backtrack = (index, path, char, open, closed, numbers) => {
+        if (!f) {
+            const arr = obj[char]
+            if (index > 11 || open > 2) return
+            if (open == closed && (Number.isInteger(char) || char == ")") && numbers == 4) {
+                let res = eval(path)
+                if (res == target || res == 23.99999999999999)
+                    f = true
+                return
+            }
+            else if (numbers == 4 && open == closed) return;
+            for (let i = 0; i < arr.length && !f; i++) {
+                if (Number.isInteger(arr[i])) {
+                    if (!used[i]) {
+                        used[i] = 1
+                        backtrack(index + 1, path + arr[i], String(arr[i]), open, closed, numbers + 1)
+                        used[i] = 0
+                    }
+                }
+                else {
+                    if (arr[i] == "(" && open >= closed && open <= 2) {
+                        backtrack(index + 1, path + arr[i], String(arr[i]), open + 1, closed, numbers)
+                    }
+
+                    else if (arr[i] == ")" && closed < open) {
+                        backtrack(index + 1, path + arr[i], String(arr[i]), open, closed + 1, numbers)
+                    }
+
+                    else if (arr[i] == "+" || arr[i] == "-" ||
+                        arr[i] == "/" || arr[i] == "*") {
+                        backtrack(index + 1, path + arr[i], String(arr[i]), open, closed, numbers)
+                    }
+                }
+            }
+        }
+    }
+    backtrack(0, "(", "(", 1, 0, 0)
+    return f
+};
