@@ -10,9 +10,9 @@ const findPaths = (m, n, maxMove, startRow, startColumn) => {
         if(key in dp)
             return dp[key]
         return dp[key] = ( dfs(i + 1, j, moves + 1) + 
-                          dfs(i - 1, j, moves + 1) +
-                          dfs(i, j - 1, moves + 1) +
-                          dfs(i, j + 1, moves + 1) ) % (10 ** 9 + 7)
+                           dfs(i - 1, j, moves + 1) +
+                           dfs(i, j - 1, moves + 1) +
+                           dfs(i, j + 1, moves + 1)) % (10 ** 9 + 7)
     }    
     return dfs(startRow, startColumn, 0) 
 };
