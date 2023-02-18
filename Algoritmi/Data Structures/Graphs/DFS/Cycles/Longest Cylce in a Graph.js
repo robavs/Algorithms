@@ -21,7 +21,6 @@ const longestCycle = edges => {
         if(res > -1)
             for(let node of visited)
                 dp[node] = 1
-        dp[i] = 1
     }
     return max
 };
