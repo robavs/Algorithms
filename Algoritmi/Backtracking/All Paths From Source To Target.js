@@ -1,43 +1,18 @@
-// Moje resenje
 const allPathsSourceTarget = graph => {
-    const queue = [[0, [0]]]
     const matrix = []
     const n = graph.length - 1
-    while(queue.length){
-        const size = queue.length
+    
+    const dfs = path => {
+        const node = path[path.length - 1]
+        if(node == n)
+            return matrix.push(path.slice())
 
-        for(let i = 0; i < size; i++){
-            const [node, path] = queue.shift()
-            
-            const list = graph[node]
-
-            for(let j = 0; j < list.length; j++){
-                if(list[j] == n){
-                    matrix.push([...path, list[j]])
-                    continue
-                }
-                queue.push([list[j], [...path, list[j]]])
-            }
+        for(let i = 0; i < graph[node].length; i++){
+            path.push(graph[node][i])
+            dfs(path)
+            path.pop()
         }
+        return matrix
     }
-    return matrix
+    return dfs([0])
 }
-// Ovo resenje je zapravo sa dfs i nije moje
-const allPaths = graph => {
-    const s = 0;
-    const t = graph.length - 1;
-    const answer = [];
-    const dfs = (node, path) => {
-        if (path[path.length - 1] === t) {
-            answer.push([...path]);
-            return;
-        }
-        for (const cur of graph[node]) {
-            path.push(cur);
-            dfs(cur, path);
-            path.pop();
-        }
-    }
-    dfs(0, [0]);
-    return answer;
-};
