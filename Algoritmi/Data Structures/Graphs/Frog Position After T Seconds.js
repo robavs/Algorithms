@@ -19,11 +19,13 @@ const frogPosition = (n, edges, t, target) => {
             if (!visited.has(graph[vertex][i])) 
                 currProb++
             
-        for (let i = 0; i < graph[vertex].length; i++) 
-            if (!visited.has(graph[vertex][i])) 
+        for (let i = 0; i < graph[vertex].length; i++) {
+            if (!visited.has(graph[vertex][i])) {
                 visited.add(graph[vertex][i])
-                queue.push([graph[vertex][i], depth + 1, probability * 1 / currProb])
-            
+                queue.push([graph[vertex][i], depth + 1, probability * 1 / currProb]) 
+            }
+        }
+
         if (currProb == 0 && vertex == target && depth < t)
             return probability
     }
