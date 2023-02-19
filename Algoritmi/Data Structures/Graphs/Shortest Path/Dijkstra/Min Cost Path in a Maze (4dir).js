@@ -13,7 +13,7 @@ const minPath = matrix => {
 
     dist[0][0] = matrix[0][0]
 
-    const queue = [[0, 0, dist[0][0]]]
+    const queue = [[0, 0]]
 
     while (queue.length) {
         const [x, y, distance] = queue.shift()
@@ -23,9 +23,9 @@ const minPath = matrix => {
             const Y = y + moves[i][1]
 
             if (isValid(X, Y)) {
-                if (dist[X][Y] > distance + matrix[X][Y]) {
-                    dist[X][Y] = distance + matrix[X][Y]
-                    queue.push([X, Y, dist[X][Y]])
+                if (dist[X][Y] > dist[X][Y] + matrix[X][Y]) {
+                    dist[X][Y] = dist[X][Y] + matrix[X][Y]
+                    queue.push([X, Y])
                 }
             }
         }
