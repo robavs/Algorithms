@@ -16,7 +16,7 @@ const minPath = matrix => {
     const queue = [[0, 0]]
 
     while (queue.length) {
-        const [x, y, distance] = queue.shift()
+        const [x, y] = queue.shift()
 
         for (let i = 0; i < 4; i++) {
             const X = x + moves[i][0]
