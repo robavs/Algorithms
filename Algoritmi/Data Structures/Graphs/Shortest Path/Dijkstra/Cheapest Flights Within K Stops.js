@@ -1,9 +1,9 @@
 // napisao sam bfs i to uzorkuje tle i slucajno sam video da neko primenio dijkstru i dodao sam samo uslov za dijkstru :(((((((
 const findCheapestPrice = (n, flights, src, dst, k) => {
     const graph = Array(n).fill(0).map(() => [])
-    for (let i = 0; i < flights.length; i++) {
+    for (let i = 0; i < flights.length; i++) 
         graph[flights[i][0]].push([flights[i][1], flights[i][2]])
-    }
+ 
     const queue = [[src, 0]] // node & price
     let res = Infinity
     let stop = -1
