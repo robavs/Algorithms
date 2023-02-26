@@ -1,4 +1,5 @@
-// cylce detection bez topological sort
+// cycle detection bez topological sort, dobra fora je ovo za dp array da cuvas koji cvorovi
+// koji su vec poseceni ne obrazuju ciklus i onda mozes odmah da izadjes iz petlje 
 const canFinish = (n, edges) => {
     const graph = Array(n).fill(0).map(() => [])
     const dp = Array(n).fill(0)
