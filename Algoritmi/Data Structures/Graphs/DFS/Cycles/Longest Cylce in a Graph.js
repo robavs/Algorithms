@@ -3,6 +3,9 @@ const longestCycle = edges => {
     const dp = Array(edges.length).fill(undefined)
 
     const dfs = (node, dest, depth, visited) => {
+        // dp[node] == 1 znaci da je deo nekog ciklusa
+        // a posto moze biti deo samo jednog ciklusa znaci 
+        // da je taj cvor vec posecen
         if (node == -1 || dp[node] != undefined)
             return -1
         if (depth > 0 && node == dest)
@@ -23,4 +26,4 @@ const longestCycle = edges => {
                 dp[node] = 1
     }
     return max
-};
+}
