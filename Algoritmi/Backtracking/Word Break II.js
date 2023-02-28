@@ -1,23 +1,20 @@
-const wordBreak = (target, words) => {
-    const final = []
-    const set = new Set(words)
+const wordBreak = (s, wordDict) => {
+    wordDict = new Set(wordDict)
+    const res = []
 
-    const dfs = (pos, substring, res) => {
-        if (res == target)
-            return true
-
-        if (pos >= target.length)
-            return false
-
-        for (let i = 0; i < target.length - res.length; i++) {
-            let word = target.slice(pos, i + pos + 1)
-            let par1 = substring.length == 0 ? word : substring + " " + word
-            if (set.has(word)) {
-                if (dfs(pos + i + 1, par1, res + word))
-                    final.push(par1)
+    const dfs = (index, path) => {
+        if (index == s.length) 
+            return res.push(path.join(" "))
+            
+        for (let i = index; i < s.length; i++) {
+            let string = s.slice(index, i + 1)
+            if (wordDict.has(string)) {
+                path.push(string)
+                dfs(i + 1, path)
+                path.pop()
             }
         }
+        return res
     }
-    dfs(0, "", "")
-    return final
+    return dfs(0, [])
 };
